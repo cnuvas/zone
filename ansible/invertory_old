@@ -1,0 +1,10 @@
+[webserver]
+
+34.221.65.94 package_name=httpd
+
+[dbserver]
+54.213.29.165
+
+[local:vars]
+package_name=httpd
+localhost
