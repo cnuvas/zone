@@ -1,0 +1,46 @@
+---
+- hosts: all 
+  tasks:
+  - name: "ping all the nodes"
+    ping:
+      data: 
+# ansible-playbook <path of the file>    # from master
+
+---
+# install git 
+- hosts: all  
+  become: yes
+  tasks:
+  - name: install git
+    apt: 
+      name: git
+      update_cache: yes
+      state: present
+
+
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name:  install tree 
+    apt: 
+      name: tree
+      update_cache: yes
+      state: present
+
+
+---
+# apache2 start the service
+- hosts: all
+  become: yes
+  tasks: 
+  - name: install apache2
+    apt:
+      name: apache2
+      update_cache: yes
+      state: present
+  - name: start service
+    service:
+      name: apache2
+      enable: yes
+      state: started

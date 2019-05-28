@@ -1,0 +1,9 @@
+[webserver]
+
+34.221.65.94
+
+[dbserver]
+54.213.29.165
+
+[local]
+localhost
